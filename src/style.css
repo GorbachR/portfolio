@@ -2,6 +2,11 @@
 *:before,
 *:after {
   box-sizing: border-box;
+  --main-constrast: rgb(78, 225, 160);
+  --main-text: rgb(217, 217, 217);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 html,
@@ -11,8 +16,7 @@ body {
 }
 
 body {
-  color: rgb(217, 217, 217);
-  font-family: "Space Grotesk", sans-serif;
+  color: var(--main-text);
   background-color: rgb(21, 21, 21);
 }
 
@@ -21,11 +25,107 @@ h2,
 h3,
 h4 {
   color: white;
+  font-weight: 700;
 }
 
-.main-header {
+h1,
+h1 > span {
+  font-size: 2rem;
+  line-height: 2.25rem;
+}
+
+h2,
+h2 > span {
+  font-size: 3.75rem;
+  line-height: 3.75rem;
+}
+
+h3,
+h3 > span {
+  font-size: 3rem;
+  line-height: 3rem;
+}
+
+main {
+  max-width: 64rem;
+  margin: auto;
+}
+
+.main-container {
+  padding: 0.5rem 1rem;
+}
+
+.header {
   width: 100%;
+
+  position: sticky;
+}
+
+.header--container {
+  max-width: 64rem;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.nav__ul {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-evenly;
+}
+
+.hero {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.hero--text {
+  max-width: 32rem;
+}
+
+.hero__span--underline {
+  border-bottom-width: 5px !important;
+}
+
+.hero__picture {
+  position: relative;
+  right: 0;
+  top: 0;
+}
+
+.hero__picture img {
+  width: 32rem;
+  max-width: 100%;
+}
+
+.interests {
+  width: 100%;
+  border-top: 1px solid white;
+}
+
+.underline {
+  border-bottom: 2px solid var(--main-constrast);
+}
+
+.link-template {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+}
+
+.link-template:visited {
+  color: white;
+}
+
+.link-template:hover {
+  color: var(--main-constrast);
 }
