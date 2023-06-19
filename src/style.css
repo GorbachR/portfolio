@@ -1,0 +1,31 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: rgb(217, 217, 217);
+  font-family: "Space Grotesk", sans-serif;
+  background-color: rgb(21, 21, 21);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: white;
+}
+
+.main-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
