@@ -26,6 +26,7 @@ h3,
 h4 {
   color: white;
   font-weight: 700;
+  margin: 0;
 }
 
 h1,
@@ -46,44 +47,56 @@ h3 > span {
   line-height: 3rem;
 }
 
-main {
-  max-width: 64rem;
-  margin: auto;
-}
-
 .main-container {
-  padding: 0.5rem 1rem;
 }
 
 .header {
   width: 100%;
-
-  position: sticky;
+  position: absolute;
+  z-index: 10;
+  margin: auto;
 }
 
 .header--container {
-  max-width: 64rem;
-  margin: auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1rem;
+  max-width: 32rem;
 }
 
 .nav__ul {
   display: flex;
   gap: 2rem;
   justify-content: space-evenly;
+  margin-right: 0.5rem;
+}
+
+main {
 }
 
 .hero {
   width: 100%;
+  position: relative;
   display: flex;
-  align-items: center;
-  padding-bottom: 1rem;
+  padding-bottom: 5rem;
 }
 
-.hero--text {
-  max-width: 32rem;
+.hero--container {
+  display: block;
+  max-width: 70%;
+  align-self: center;
+  position: relative;
+  padding-top: 4rem;
+}
+
+.hero__h2 {
+  margin-bottom: 3.75rem;
+}
+
+.hero__p {
+  margin-bottom: 3.75rem;
 }
 
 .hero__span--underline {
@@ -91,19 +104,134 @@ main {
 }
 
 .hero__picture {
+  /* width: 100%; */
+  display: block;
   position: relative;
-  right: 0;
-  top: 0;
+  max-width: 33%;
 }
 
 .hero__picture img {
-  width: 32rem;
-  max-width: 100%;
+  width: 100%;
 }
 
 .interests {
   width: 100%;
   border-top: 1px solid white;
+  padding-top: 3.75rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.interests > div {
+  flex-basis: calc(33% - 2rem);
+}
+
+footer {
+  padding-top: 3.75rem;
+  background-color: rgb(36, 36, 36);
+}
+
+.contact--container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  margin-bottom: 3.75rem !important;
+}
+
+.contact--text {
+  max-width: 25rem;
+}
+
+.contact--form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 30rem;
+}
+
+.contact--form > *:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.contact--form input,
+textarea {
+  outline: none;
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: white;
+}
+
+.contact--form input:not([type="submit"]),
+textarea {
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid white;
+}
+
+.contact--form input:focus,
+textarea:focus {
+  border-color: var(--main-constrast);
+}
+
+.contact--form input[type="submit"] {
+  font-weight: 700;
+  align-self: flex-end;
+  letter-spacing: 2.3px;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--main-constrast);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+}
+
+.contact--form input[type="submit"]:hover,
+input[type="submit"]:focus {
+  color: var(--main-constrast);
+}
+
+.contact--form textarea {
+  resize: none;
+}
+
+.contact--form input::placeholder,
+textarea::placeholder {
+  color: white;
+}
+
+.footer {
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid white;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.footer-nav--title {
+  color: white;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+.center-section {
+  padding: 0 1rem;
+  max-width: 64rem;
+  margin: auto;
 }
 
 .underline {
@@ -114,6 +242,7 @@ main {
   text-decoration: none;
   color: white;
   font-weight: 700;
+  letter-spacing: 2.3px;
   padding-bottom: 0.5rem;
   transition: all 0.2s ease;
   -webkit-transition: all 0.2s ease;
