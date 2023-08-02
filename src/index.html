@@ -1,49 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=2.0" />
     <meta name="description" content="Raphael Gorbach's Portfolio" />
     <meta
       name="keywords"
-      content="portfolio, raphael gorbach, sorftware engineer, go, javascript" />
+      content="portfolio, raphael gorbach, sorftware engineer, go, javascript"
+    />
+    <meta name="theme-color" content="#4EE1A0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="animations.css" />
+    <link
+      rel="preload"
+      href="fonts/SpaceGrotesk-Medium.woff2"
+      crossorigin="anonymous"
+      as="font"
+      type="font/woff2"
+    />
+    <link
+      rel="preload"
+      href="fonts/SpaceGrotesk-Bold.woff2"
+      crossorigin="anonymous"
+      as="font"
+      type="font/woff2"
+    />
     <link rel="stylesheet" href="fonts.css" />
+    <link rel="icon" href="./assets/favicon_v2.ico" type="image/x-icon" />
     <title>Raphael Gorbach's Portolio</title>
   </head>
   <body>
     <div class="main-container">
-      <script type="module" src="index.js"></script>
+      <script type="module" src="index.ts"></script>
       <header class="header">
         <div class="nav center-section">
           <span class="nav__title">raphaelgorbach</span>
           <nav class="nav__element">
             <ul class="nav__list">
               <li>
-                <a href="https://github.com/GorbachR">
+                <a
+                  href="https://github.com/GorbachR"
+                  aria-label="Link to my github account"
+                >
                   <svg
                     class="nav__svg"
                     xmlns="http://www.w3.org/2000/svg"
                     width="25"
-                    height="24">
+                    height="24"
+                  >
                     <path
                       fill="#FFF"
                       fill-rule="evenodd"
-                      d="M12.304 0C5.506 0 0 5.506 0 12.304c0 5.444 3.522 10.042 8.413 11.672.615.108.845-.261.845-.584 0-.292-.015-1.261-.015-2.291-3.091.569-3.891-.754-4.137-1.446-.138-.354-.738-1.446-1.261-1.738-.43-.23-1.046-.8-.016-.815.97-.015 1.661.892 1.892 1.261 1.107 1.86 2.876 1.338 3.584 1.015.107-.8.43-1.338.784-1.646-2.738-.307-5.598-1.368-5.598-6.074 0-1.338.477-2.446 1.26-3.307-.122-.308-.553-1.569.124-3.26 0 0 1.03-.323 3.383 1.26.985-.276 2.03-.415 3.076-.415 1.046 0 2.092.139 3.076.416 2.353-1.6 3.384-1.261 3.384-1.261.676 1.691.246 2.952.123 3.26.784.861 1.26 1.953 1.26 3.307 0 4.721-2.875 5.767-5.613 6.074.446.385.83 1.123.83 2.277 0 1.645-.015 2.968-.015 3.383 0 .323.231.708.846.584a12.324 12.324 0 0 0 8.382-11.672C24.607 5.506 19.101 0 12.304 0Z" />
+                      d="M12.304 0C5.506 0 0 5.506 0 12.304c0 5.444 3.522 10.042 8.413 11.672.615.108.845-.261.845-.584 0-.292-.015-1.261-.015-2.291-3.091.569-3.891-.754-4.137-1.446-.138-.354-.738-1.446-1.261-1.738-.43-.23-1.046-.8-.016-.815.97-.015 1.661.892 1.892 1.261 1.107 1.86 2.876 1.338 3.584 1.015.107-.8.43-1.338.784-1.646-2.738-.307-5.598-1.368-5.598-6.074 0-1.338.477-2.446 1.26-3.307-.122-.308-.553-1.569.124-3.26 0 0 1.03-.323 3.383 1.26.985-.276 2.03-.415 3.076-.415 1.046 0 2.092.139 3.076.416 2.353-1.6 3.384-1.261 3.384-1.261.676 1.691.246 2.952.123 3.26.784.861 1.26 1.953 1.26 3.307 0 4.721-2.875 5.767-5.613 6.074.446.385.83 1.123.83 2.277 0 1.645-.015 2.968-.015 3.383 0 .323.231.708.846.584a12.324 12.324 0 0 0 8.382-11.672C24.607 5.506 19.101 0 12.304 0Z"
+                    />
                   </svg>
                 </a>
               </li>
               <li>
-                <a href="">
+                <a href="" aria-label="Link to my linkedin account">
                   <svg
                     class="nav__svg"
                     xmlns="http://www.w3.org/2000/svg"
                     width="25"
-                    height="24">
+                    height="24"
+                  >
                     <path
                       fill="#FFF"
                       fill-rule="evenodd"
-                      d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z" />
+                      d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z"
+                    />
                   </svg>
                 </a>
               </li>
@@ -53,139 +78,234 @@
       </header>
 
       <main class="center-section">
-        <section class="hero">
-          <img class="pattern-rings" src="assets/pattern-rings.svg" alt="" />
+        <section class="hero" id="hero">
+          <svg
+            class="rings rings--left rings__hero"
+            xmlns="http://www.w3.org/2000/svg"
+            width="530"
+            height="129"
+          >
+            <g fill="none" fill-rule="evenodd" stroke="#FFF" opacity=".25">
+              <ellipse cx="265" cy="40" rx="264.5" ry="39.5" />
+              <ellipse cx="265" cy="52" rx="264.5" ry="39.5" />
+              <ellipse cx="265" cy="65" rx="264.5" ry="39.5" />
+              <ellipse cx="265" cy="77" rx="264.5" ry="39.5" />
+              <ellipse cx="265" cy="89" rx="264.5" ry="39.5" />
+            </g>
+          </svg>
           <div class="hero__textblock">
-            <h1 class="hero__h1">
+            <h1 class="hero__h1 fade-in-below delay-1 hidden">
               Hi there! I'm
               <span class="underline hero__thick-underline"
                 >Raphael Gorbach</span
               >.
             </h1>
-            <p class="hero__p">
+            <p class="hero__p fade-in-below delay-2 hidden">
               Based in Austria, I'm an aspiring Software Engineer interested in
-              Full Stack Web Development and Machine Learning.
+              Full Stack Web Development.
             </p>
-            <div class="hero__link">
-              <a class="link-template underline" href="">CONTACT ME!</a>
+            <div class="hero__link fade-in-below delay-3 hidden">
+              <a
+                class="link-template underline"
+                href="#contact-form"
+                aria-label="Link to contact form"
+                >CONTACT ME!</a
+              >
             </div>
           </div>
-          <div class="portrait__container">
-            <div class="portrait fade-in-element">
-              <img
+          <div class="float-right-container">
+            <div class="portrait fade-in hidden">
+              <svg
                 class="pattern-circle"
-                src="assets/pattern-circle.svg"
-                alt="" />
+                xmlns="http://www.w3.org/2000/svg"
+                width="129"
+                height="129"
+              >
+                <circle
+                  cx="830.5"
+                  cy="585.5"
+                  r="64"
+                  fill="none"
+                  stroke="#FFF"
+                  transform="translate(-766 -521)"
+                />
+              </svg>
               <img
                 class="portrait__image"
                 width="646"
                 height="1200"
                 src="assets/Raphael_10x15cm.webp"
-                alt="" />
+                alt=""
+              />
             </div>
           </div>
         </section>
-        <section class="interests">
-          <div>
-            <h3>Go</h3>
+        <section class="interests white-border-top" id="interests">
+          <svg
+            class="rings rings--right rings__interests"
+            xmlns="http://www.w3.org/2000/svg"
+            width="530"
+            height="129"
+          >
+            <g fill="none" fill-rule="evenodd" stroke="#FFF" opacity=".25">
+              <ellipse cx="265" cy="40" rx="264.5" ry="39.5" />
+              <ellipse cx="265" cy="52" rx="264.5" ry="39.5" />
+              <ellipse cx="265" cy="65" rx="264.5" ry="39.5" />
+              <ellipse cx="265" cy="77" rx="264.5" ry="39.5" />
+              <ellipse cx="265" cy="89" rx="264.5" ry="39.5" />
+            </g>
+          </svg>
+          <div class="hidden" id="first-interest">
+            <span class="interests__title">Go</span>
             <p>
               My absolute favorite language rn, imo the best backend language
               there is
             </p>
           </div>
-          <div>
-            <h3>JavaScript</h3>
+          <div class="hidden">
+            <span class="interests__title">JavaScript</span>
             <p>
               My second go to language, however I wish the web was already a
               language agnostic platform!
             </p>
           </div>
-          <div>
-            <h3>Linux</h3>
+          <div class="hidden">
+            <h2 class="interests__title">Linux</h2>
             <p>
               I daily drive Ubuntu and have become quite comfortable with shell
               commands for Unix like operating systems
             </p>
           </div>
-          <!-- <div>
-            <h3></h3>
-            <p></p>
+
+          <div class="hidden">
+            <span class="interests__title">Web</span>
+            <p>
+              Different web technologies and concepts are second nature to me at
+              this point
+            </p>
           </div>
-          <div>
-            <h3></h3>
-            <p></p>
+          <div class="hidden">
+            <span class="interests__title">SQL</span>
+            <p>
+              Used Sql a decent bit already, never had to do complicated joins
+              but I'm familiar with more advanced concepts such as indexing and
+              normalization
+            </p>
           </div>
-          <div>
-            <h3></h3>
-            <p></p>
-          </div> -->
+          <div class="hidden">
+            <span class="interests__title">Networking</span>
+            <p>
+              Not an absolute expert in this field but concepts such as TCP
+              sockets, DNS, Routers, NAT etc... are familiar to me
+            </p>
+          </div>
         </section>
-        <section>
+        <section class="projects hidden" id="projects">
           <h2>Projects</h2>
-          <p>All of my projects can be found on my github page!</p>
+          <p class="projects__text">
+            My projects can be found on my github page, although do keep in mind
+            I play around with alot of different languages/ frameworks/ concepts
+            without repos
+          </p>
+        </section>
+        <section class="blog hidden" id="blog">
+          <h2>Blog</h2>
+          <p class="blog__text">
+            Eventually when the time is right I'll probably start a blog about
+            topics that interest me. Have I done this yet?
+            <a href="" aria-label="Link to my blog">Check for yourself</a>
+          </p>
         </section>
       </main>
       <footer class="footer">
-        <div class="contact center-section">
-          <div class="contact__text">
-            <h2>Contact</h2>
-            <p>
-              For business inquiries, or if you just want to get in contact
-              please fill out the form, I'll get back to you as soon as I can!
-            </p>
+        <div class="center-section">
+          <div class="contact" id="contact">
+            <svg
+              class="rings rings--left rings__footer"
+              xmlns="http://www.w3.org/2000/svg"
+              width="530"
+              height="129"
+            >
+              <g fill="none" fill-rule="evenodd" stroke="#FFF" opacity=".25">
+                <ellipse cx="265" cy="40" rx="264.5" ry="39.5" />
+                <ellipse cx="265" cy="52" rx="264.5" ry="39.5" />
+                <ellipse cx="265" cy="65" rx="264.5" ry="39.5" />
+                <ellipse cx="265" cy="77" rx="264.5" ry="39.5" />
+                <ellipse cx="265" cy="89" rx="264.5" ry="39.5" />
+              </g>
+            </svg>
+            <div class="contact__text hidden" id="contact-text">
+              <h2>Contact</h2>
+              <p>
+                For business inquiries, or if you just want to get in contact
+                please fill out the form, I'll get back to you as soon as I can!
+              </p>
+            </div>
+            <form class="contact__form hidden" id="contact-form">
+              <input type="text" name="name" placeholder="NAME" required />
+              <input type="email" name="email" placeholder="EMAIL" required />
+              <textarea
+                name="text"
+                placeholder="TEXT"
+                id=""
+                cols="20"
+                rows="10"
+                required
+              ></textarea>
+              <button type="button" onClick="submitForm()">SEND MESSAGE</button>
+            </form>
           </div>
-          <form class="contact__form" action="POST">
-            <input type="text" placeholder="NAME" />
-            <input type="email" placeholder="EMAIL" />
-            <textarea
-              name=""
-              placeholder="TEXT"
-              id=""
-              cols="20"
-              rows="10"></textarea>
-            <input type="submit" value="SEND MESSAGE" />
-          </form>
-        </div>
-        <div class="nav center-section">
-          <span class="nav__title">raphaelgorbach</span>
-          <p class="frontendmentor">
-            Design from
-            <a href="https://www.frontendmentor.io/" target="_blank"
-              >www.frontendmentor.io</a
-            >, check them out!
-          </p>
-          <nav class="nav__element">
-            <ul class="nav__list">
-              <li>
-                <a href="https://github.com/GorbachR">
-                  <svg
-                    class="nav__svg"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="25"
-                    height="24">
-                    <path
-                      fill="#FFF"
-                      fill-rule="evenodd"
-                      d="M12.304 0C5.506 0 0 5.506 0 12.304c0 5.444 3.522 10.042 8.413 11.672.615.108.845-.261.845-.584 0-.292-.015-1.261-.015-2.291-3.091.569-3.891-.754-4.137-1.446-.138-.354-.738-1.446-1.261-1.738-.43-.23-1.046-.8-.016-.815.97-.015 1.661.892 1.892 1.261 1.107 1.86 2.876 1.338 3.584 1.015.107-.8.43-1.338.784-1.646-2.738-.307-5.598-1.368-5.598-6.074 0-1.338.477-2.446 1.26-3.307-.122-.308-.553-1.569.124-3.26 0 0 1.03-.323 3.383 1.26.985-.276 2.03-.415 3.076-.415 1.046 0 2.092.139 3.076.416 2.353-1.6 3.384-1.261 3.384-1.261.676 1.691.246 2.952.123 3.26.784.861 1.26 1.953 1.26 3.307 0 4.721-2.875 5.767-5.613 6.074.446.385.83 1.123.83 2.277 0 1.645-.015 2.968-.015 3.383 0 .323.231.708.846.584a12.324 12.324 0 0 0 8.382-11.672C24.607 5.506 19.101 0 12.304 0Z" />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <svg
-                    class="nav__svg"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="25"
-                    height="24">
-                    <path
-                      fill="#FFF"
-                      fill-rule="evenodd"
-                      d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z" />
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <div class="nav center-section">
+            <span class="nav__title">raphaelgorbach</span>
+            <p class="frontendmentor">
+              Design from
+              <a
+                href="https://www.frontendmentor.io/"
+                target="_blank"
+                aria-label="Link to frontendmentor.io"
+                >www.frontendmentor.io</a
+              >, check them out!
+            </p>
+            <nav class="nav__element">
+              <ul class="nav__list">
+                <li>
+                  <a
+                    href="https://github.com/GorbachR"
+                    aria-label="Link to my github account"
+                  >
+                    <svg
+                      class="nav__svg"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="24"
+                    >
+                      <path
+                        fill="#FFF"
+                        fill-rule="evenodd"
+                        d="M12.304 0C5.506 0 0 5.506 0 12.304c0 5.444 3.522 10.042 8.413 11.672.615.108.845-.261.845-.584 0-.292-.015-1.261-.015-2.291-3.091.569-3.891-.754-4.137-1.446-.138-.354-.738-1.446-1.261-1.738-.43-.23-1.046-.8-.016-.815.97-.015 1.661.892 1.892 1.261 1.107 1.86 2.876 1.338 3.584 1.015.107-.8.43-1.338.784-1.646-2.738-.307-5.598-1.368-5.598-6.074 0-1.338.477-2.446 1.26-3.307-.122-.308-.553-1.569.124-3.26 0 0 1.03-.323 3.383 1.26.985-.276 2.03-.415 3.076-.415 1.046 0 2.092.139 3.076.416 2.353-1.6 3.384-1.261 3.384-1.261.676 1.691.246 2.952.123 3.26.784.861 1.26 1.953 1.26 3.307 0 4.721-2.875 5.767-5.613 6.074.446.385.83 1.123.83 2.277 0 1.645-.015 2.968-.015 3.383 0 .323.231.708.846.584a12.324 12.324 0 0 0 8.382-11.672C24.607 5.506 19.101 0 12.304 0Z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="" aria-label="Link to my linkedin account">
+                    <svg
+                      class="nav__svg"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="24"
+                    >
+                      <path
+                        fill="#FFF"
+                        fill-rule="evenodd"
+                        d="M5.551 3.304c-1.14 0-2.067.926-2.067 2.064 0 1.14.928 2.066 2.067 2.066a2.066 2.066 0 0 0 0-4.13ZM3.767 8.998v11.453h3.562L7.33 8.998H3.767Zm5.798 0V20.45l3.554.002.002-5.668c0-1.454.253-2.941 2.132-2.941 1.851 0 1.851 1.755 1.851 3.036v5.571l3.559-.001v-6.28c0-2.834-.517-5.457-4.27-5.457-1.763 0-2.916.997-3.368 1.85h-.05V8.997h-3.41ZM22.435 24H1.982c-.976 0-1.77-.777-1.77-1.732V1.731C.212.776 1.006 0 1.982 0h20.453c.98 0 1.777.776 1.777 1.73v20.538c0 .955-.797 1.732-1.777 1.732Z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </footer>
     </div>

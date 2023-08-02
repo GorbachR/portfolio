@@ -2,11 +2,11 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "my portfolio",
-  "main": "index.js",
   "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build --dist-dir public",
+    "build": "rm -rf build/* && parcel build src/index.html --dist-dir public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +19,7 @@
   "author": "Raphael Gorbach",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.9.2"
+    "parcel": "^2.9.2",
+    "typescript": "^5.1.6"
   }
 }

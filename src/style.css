@@ -1,7 +1,10 @@
 :root {
   --main-constrast: rgb(78, 225, 160);
   --main-text: rgb(217, 217, 217);
-  --spacing1: 3.5rem;
+  --center-width: 72rem;
+  --rings-size: 530px;
+  --outer-margin: 1.5rem;
+  --primary-spacing: 3rem;
   font-size: 1rem;
 }
 
@@ -20,11 +23,22 @@ html,
 body {
   padding: 0;
   margin: 0;
+  overflow-anchor: none;
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--main-text);
   background-color: rgb(21, 21, 21);
+}
+
+.white-border-top {
+  border-top: 1px solid #fff;
+}
+
+.main-container {
+  /* Don't like this, but will do the job and looks fine on 280px vp also all the other solutions suck! */
+  overflow-x: hidden;
 }
 
 h1,
@@ -99,7 +113,12 @@ h3 > span {
   fill: var(--main-constrast);
 }
 
-main {
+main > *:not(:first-child) {
+  padding-top: 3rem;
+}
+
+main > *:last-child {
+  padding-bottom: 3rem;
 }
 
 .hero {
@@ -109,7 +128,7 @@ main {
   position: relative;
   flex-direction: column-reverse;
   align-items: center;
-  padding-bottom: var(--spacing1);
+  padding-bottom: var(--primary-spacing);
 }
 
 .hero__textblock {
@@ -122,17 +141,42 @@ main {
   z-index: 2;
 }
 
-.pattern-rings {
-  align-self: baseline;
+.rings {
   position: absolute;
-  left: 0;
-  top: 15%;
-  transform: translateX(-50%);
+  transition: 0.2s ease;
   z-index: 1;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
+}
+
+.rings--left {
+  left: 0;
+  transform: translateX(calc(-50% - (var(--rings-size) - 100vw)));
+}
+
+.rings--right {
+  right: 0;
+  transform: translateX(calc(50% + (var(--rings-size) - 100vw)));
+}
+/* Sadly can't use vars here!! */
+@media screen and (min-width: 480px) {
+  .rings--left {
+    transform: translateX(-50%);
+  }
+
+  .rings--right {
+    transform: translateX(50%);
+  }
+}
+
+.rings__hero {
+  top: 15%;
+}
+
+.rings__interests {
+  bottom: -2rem;
+}
+
+.rings__footer {
+  bottom: 0;
 }
 
 .pattern-circle {
@@ -141,15 +185,17 @@ main {
   position: absolute;
   right: -3.75rem;
   bottom: 0rem;
+  z-index: 2;
 }
 
 .hero__h1 {
-  margin-bottom: var(--spacing1);
+  margin-bottom: 2rem;
 }
 
 .hero__p {
-  margin-bottom: var(--spacing1);
+  margin-top: 0;
   max-width: 32rem;
+  margin-bottom: 2rem;
 }
 
 .hero__link {
@@ -160,25 +206,18 @@ main {
   border-bottom-width: 5px !important;
 }
 
-.portrait__container {
-  width: calc(100% + 3rem);
-  margin-top: 2rem;
+.float-right-container {
   position: relative;
-  margin-bottom: var(--spacing1);
-  overflow-x: hidden;
-  transition: margin-right 0.2s ease;
-  -webkit-transition: margin-right 0.2s ease;
-  -moz-transition: margin-right 0.2s ease;
-  -ms-transition: margin-right 0.2s ease;
-  -o-transition: margin-right 0.2s ease;
+  width: calc(100% + 3rem);
+  margin-bottom: 3rem;
+  margin-top: 2rem;
 }
 
 .portrait {
   position: unset;
+  margin: 0 auto;
   min-width: 10rem;
   max-width: 50%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .portrait__image {
@@ -186,13 +225,14 @@ main {
   background: linear-gradient(to top, rgba(34, 34, 34, 1), rgba(34, 34, 34, 0));
   height: auto;
   width: 100%;
+  z-index: 1;
 }
 
 .interests {
+  position: relative;
   width: 100%;
   min-width: fit-content;
-  border-top: 1px solid white;
-  padding-top: var(--spacing1);
+  max-width: 100%;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -201,23 +241,44 @@ main {
 }
 
 .interests > div {
-  flex-basis: calc(33% - 4rem);
-  flex-shrink: 0;
+  flex-basis: calc(33% - 3rem);
+  /* I don't like this, will do for now */
+  min-width: 11.25rem;
+}
+
+.interests__title {
+  color: white;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.projects,
+.blog {
+  text-align: center;
+}
+
+.projects__text,
+.blog__text {
+  max-width: calc(var(--center-width) / 2);
+  margin: 0 auto;
+  margin-top: 1rem !important;
 }
 
 .footer {
+  padding-top: var(--primary-spacing);
   min-width: fit-content;
-  padding-top: var(--spacing1);
   background-color: rgb(36, 36, 36);
 }
 
 .contact {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
   justify-content: space-between;
-  margin-bottom: 3.75rem !important;
+  padding-bottom: var(--primary-spacing);
   text-align: center;
 }
 
@@ -237,18 +298,17 @@ main {
 }
 
 .contact__form input,
-textarea {
+textarea,
+button {
   outline: none;
   border: none;
   background-image: none;
   background-color: transparent;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
   box-shadow: none;
   color: white;
 }
 
-.contact__form input:not([type="submit"]),
+.contact__form input,
 textarea {
   padding-left: 1rem;
   padding-bottom: 1rem;
@@ -260,7 +320,7 @@ textarea:focus {
   border-color: var(--main-constrast);
 }
 
-.contact__form input[type="submit"] {
+.contact__form button {
   font-weight: 700;
   align-self: flex-end;
   letter-spacing: 2.3px;
@@ -268,13 +328,9 @@ textarea:focus {
   border-bottom: 2px solid var(--main-constrast);
   cursor: pointer;
   transition: all 0.2s ease;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
 }
 
-.contact__form input[type="submit"]:hover,
+.contact__form button:hover,
 input[type="submit"]:focus {
   color: var(--main-constrast);
 }
@@ -291,7 +347,7 @@ textarea::placeholder {
 .center-section {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  max-width: 72rem;
+  max-width: var(--center-width);
   margin: auto;
 }
 
@@ -305,11 +361,7 @@ textarea::placeholder {
   font-weight: 700;
   letter-spacing: 2.3px;
   padding-bottom: 0.5rem;
-  transition: all 0.2s ease;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .link-template:visited {
@@ -332,7 +384,7 @@ a:visited {
 
 @media screen and (min-width: 48rem) {
   :root {
-    --padding1: 5rem;
+    --primary-spacing: 4rem;
   }
 
   *,
@@ -360,6 +412,14 @@ a:visited {
     line-height: 2.5rem;
   }
 
+  main > *:not(:first-child) {
+    padding-top: 4rem;
+  }
+
+  main > *:last-child {
+    padding-bottom: 4rem;
+  }
+
   .nav {
     flex-direction: row;
     justify-content: space-between;
@@ -373,6 +433,7 @@ a:visited {
   .hero {
     flex-direction: row;
     justify-content: space-between;
+    padding-bottom: 4rem;
   }
 
   .hero__textblock {
@@ -382,38 +443,46 @@ a:visited {
 
   .hero__h1 {
     width: 120%;
+    margin-bottom: 4rem;
   }
 
-  .portrait__container {
-    margin-top: 0;
+  .hero__p {
+    margin-bottom: 4rem;
+  }
+
+  .float-right-container {
+    position: relative;
+    width: 100%;
     margin-bottom: 0;
-    margin-left: 0;
-    margin-right: -1.5rem;
+    margin-top: 0;
   }
 
   .portrait {
-    margin-left: auto;
-    margin-right: 0;
     position: relative;
     max-width: 28rem;
+    margin-right: calc(0px - var(--outer-margin));
   }
 
   .portrait__image {
-    max-width: 42rem;
     background: rgb(34, 34, 34);
-  }
-
-  .pattern-circle {
-    right: -3.75rem;
   }
 
   .interests {
     justify-content: space-between;
     text-align: start;
   }
+
+  .interests__title {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
 }
 
-@media screen and (min-width: 75rem) {
+@media screen and (min-width: 72rem) {
+  :root {
+    --primary-spacing: 5rem;
+  }
+
   *,
   *:before,
   *:after {
@@ -439,6 +508,14 @@ a:visited {
     line-height: 3rem;
   }
 
+  main > *:not(:first-child) {
+    padding-top: 5rem;
+  }
+
+  main > *:last-child {
+    padding-bottom: 5rem;
+  }
+
   .nav__title,
   .nav__title > span {
     font-size: 2rem;
@@ -452,7 +529,6 @@ a:visited {
   .hero {
     width: 100%;
     display: flex;
-    padding-bottom: 5rem;
   }
 
   .pattern-circle {
@@ -460,17 +536,24 @@ a:visited {
     left: -3.75rem;
   }
 
-  .portrait__container {
-    margin-right: 0;
-  }
-
   .portrait {
-    overflow-x: visible;
     margin-right: 0;
+    overflow-x: visible;
   }
 
-  .footer {
-    padding-bottom: 3rem;
+  .interests__title {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  .projects,
+  .blog {
+    text-align: start;
+  }
+
+  .projects__text,
+  .blog__text {
+    margin: 0;
   }
 
   .contact {

@@ -1,0 +1,43 @@
+.fade-in-below {
+  animation:
+    animation-fade-in 0.5s cubic-bezier(0.3, 0, 0.5, 1) 0.1s 1 normal forwards
+      running,
+    animation-below-trans 0.5s cubic-bezier(0.3, 0, 0.5, 1) 0.1s 1 normal
+      forwards running;
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.delay-2 {
+  animation-delay: 0.2s;
+}
+
+.delay-3 {
+  animation-delay: 0.3s;
+}
+
+.fade-in {
+  animation: animation-fade-in 0.5s cubic-bezier(0.3, 0, 0.5, 1) 0.3s 1 normal
+    forwards running;
+}
+
+@keyframes animation-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animation-below-trans {
+  0% {
+    transform: translateY(32px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
