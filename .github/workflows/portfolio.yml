@@ -27,7 +27,7 @@ jobs:
         
       - name: Set up SSH Key
         run: |
-          echo "${{SSH_KEY}}" > ~/.ssh/id_rsa
+          echo ${{SSH_KEY}} > ~/.ssh/id_rsa
           ssh-keyscan -t rsa ${{USER_AND_HOST}} >> ~/.ssh/known_hosts
           
       - name: Deploy to remote server
