@@ -31,4 +31,4 @@ jobs:
           ssh-keyscan -t rsa ${{secrets.USER_AND_HOST}} >> ~/.ssh/known_hosts
           
       - name: Deploy to remote server
-        run: scp -r -o "BatchMode yes" /build/* ${{USER_AND_HOST}}:/var/www/html
+        run: scp -r -o "BatchMode yes" /build/* ${{secrets.USER_AND_HOST}}:/var/www/html
