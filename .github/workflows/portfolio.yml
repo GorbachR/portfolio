@@ -27,6 +27,7 @@ jobs:
         
       - name: Set up SSH Key
         run: |
+          mkdir -p ~/.ssh
           echo "${{secrets.SSH_KEY}}" > ~/.ssh/id_rsa
           ssh-keyscan -t rsa ${{secrets.USER_AND_HOST}} >> ~/.ssh/known_hosts
           
