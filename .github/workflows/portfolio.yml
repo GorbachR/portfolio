@@ -33,4 +33,4 @@ jobs:
           ssh-keyscan -t rsa www.rgorbach.dev >> ~/.ssh/known_hosts
           
       - name: Deploy to remote server
-        run: scp -r -o "BatchMode yes" ./build/* ${{secrets.SSH_USER}}@www.rgorbach.dev:/var/www/html
+        run: scp -r -o "BatchMode yes" ./public/* ${{secrets.SSH_USER}}@www.rgorbach.dev:/var/www/html
