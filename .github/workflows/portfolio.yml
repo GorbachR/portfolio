@@ -27,8 +27,8 @@ jobs:
         
       - name: Set up SSH Key
         run: |
-          echo ${{SSH_KEY}} > ~/.ssh/id_rsa
-          ssh-keyscan -t rsa ${{USER_AND_HOST}} >> ~/.ssh/known_hosts
+          echo "${{secrets.SSH_KEY}}" > ~/.ssh/id_rsa
+          ssh-keyscan -t rsa ${{secrets.USER_AND_HOST}} >> ~/.ssh/known_hosts
           
       - name: Deploy to remote server
         run: scp -r -o "BatchMode yes" /build/* ${{USER_AND_HOST}}:/var/www/html
