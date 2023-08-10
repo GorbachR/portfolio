@@ -1,0 +1,33 @@
+name: build-and-deploy-portfolio
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      
+jobs:
+  build-and-deploy-portfolio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Build parcel project
+        run: npm run build
+        
+      - name: Set up SSH Key
+        run: |
+          echo "${{SSH_KEY}}" > ~/.ssh/id_rsa
+          ssh-keyscan -t rsa ${{USER_AND_HOST}} >> ~/.ssh/known_hosts
+          
+      - name: Deploy to remote server
+        run: scp -r -o "BatchMode yes" /build/* ${{USER_AND_HOST}}:/var/www/html
