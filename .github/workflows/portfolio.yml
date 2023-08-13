@@ -33,4 +33,18 @@ jobs:
           ssh-keyscan -t rsa www.rgorbach.dev >> ~/.ssh/known_hosts
           
       - name: Deploy to remote server
-        run: scp -r -o "BatchMode yes" ./public/* ${{secrets.SSH_USER}}@www.rgorbach.dev:/var/www/html
+        run: |
+          MAX_RETRIES=5
+          COUNT=0
+          while[[$COUNT -lt $MAX_RETRIES]]
+            scp -r -o "BatchMode yes" ./public/* ${{secrets.SSH_USER}}@www.rgorbach.dev:/var/www/html && break
+
+            COUNT=$((COUNT+1))
+            echo "ATTEMPT $COUNT FAILED RETRYING IN 10 SECONDS..."
+            sleep 10
+          done
+          if [[$COUNT -eq $MAX_RETRIES]] then
+            echo "Failed after $MAX_RETRIES attempts!"
+            exit 1
+          fi
+          
