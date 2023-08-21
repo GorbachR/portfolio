@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .button {
+    @apply rounded-xl px-8 py-3 text-white font-normal;
+  }
+
+  .button:hover {
+    @apply -translate-y-0.5 shadow-lg;
+  }
+
+  .link {
+    @apply hover:text-blue-400 ease-in;
+  }
+}
+
+html {
+  @apply font-Karla;
+}
+
+p {
+  @apply text-lg;
+}
