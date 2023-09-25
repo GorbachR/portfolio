@@ -1,15 +1,18 @@
-import { WindowContext } from "../../context/WindowContext";
-import Navigation from "./Navigation/Navigation";
-import { useContext } from "react";
+import Blog from "./Blog/Blog";
+import Contact from "./Contact/Contact";
+import Hero from "./Hero/Hero";
+import Projects from "./Projects/Projects";
+import Skills from "./Skills/Skills";
 
 function Home() {
-  const clientWidth = useContext(WindowContext);
-
   return (
-    <div className="[&>*]:px-6 [&>*]:max-w-6xl [&>*]:mx-auto">
-      <Navigation />
-      <section>{clientWidth}</section>
-    </div>
+    <main>
+      <Hero />
+      <Skills />
+      <Projects />
+      <Blog />
+      <Contact />
+    </main>
   );
 }
 

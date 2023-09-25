@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;600;700&family=Poppins:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 
 @tailwind base;
@@ -7,7 +7,7 @@
 
 @layer components {
   .button {
-    @apply rounded-xl px-8 py-3 text-white font-normal;
+    @apply rounded-xl py-4 text-white font-normal duration-200 text-center;
   }
 
   .button:hover {
@@ -15,12 +15,28 @@
   }
 
   .link {
-    @apply hover:text-blue-400 ease-in;
+    @apply hover:text-sky-600 duration-200;
+  }
+
+  .burger-link {
+    @apply block font-semibold text-3xl py-8;
+  }
+
+  .center-section {
+    @apply px-6 max-w-6xl mx-auto;
+  }
+
+  .subheading {
+    @apply uppercase font-bold tracking-widest text-gray-400;
+  }
+
+  .title {
+    @apply font-Poppins font-bold text-gray-900 tracking-tighter text-5xl md:text-6xl;
   }
 }
 
 html {
-  @apply font-Karla;
+  @apply font-Karla text-gray-600 scroll-smooth;
 }
 
 p {
