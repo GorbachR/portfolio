@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'src/**'
+      - 'content/**'
       
 jobs:
   build-and-deploy-portfolio:
@@ -20,10 +20,10 @@ jobs:
           node-version: 18
           
       - name: Install dependencies
-        run: npm install
+        run: cd content && npm install
       
-      - name: Build parcel project
-        run: npm run build
+      - name: Build astro project
+        run: cd content && npm run astro build
         
       - name: Set up SSH Key
         run: |
@@ -37,7 +37,7 @@ jobs:
           MAX_RETRIES=5
           COUNT=0
           while[[$COUNT -lt $MAX_RETRIES]]
-            scp -r -o "BatchMode yes" ./public/* ${{secrets.SSH_USER}}@www.rgorbach.dev:/var/www/html && break
+            scp -r -o "BatchMode yes" ./content/dist/* ${{secrets.SSH_USER}}@www.rgorbach.dev:/var/www/html && break
 
             COUNT=$((COUNT+1))
             echo "ATTEMPT $COUNT FAILED RETRYING IN 10 SECONDS..."
