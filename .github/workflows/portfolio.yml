@@ -36,7 +36,7 @@ jobs:
         run: |
           MAX_RETRIES=5
           COUNT=0
-          while[[ $COUNT -le $MAX_RETRIES ]]; do
+          while [[ $COUNT -le $MAX_RETRIES ]]; do
             scp -r -o "BatchMode yes" ./content/dist/* ${{secrets.SSH_USER}}@www.rgorbach.dev:/var/www/html && break
 
             COUNT=$((COUNT+1))
